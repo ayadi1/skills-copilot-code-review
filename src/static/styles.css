@@ -672,3 +672,320 @@ footer {
 #logout-button:hover {
   background-color: rgba(255, 255, 255, 0.3);
 }
+
+/* ========== ANNOUNCEMENTS STYLES ========== */
+
+.announcement-banner {
+  background: linear-gradient(135deg, var(--success), #1b5e20);
+  color: white;
+  text-align: center;
+  padding: 16px;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  box-shadow: 0 3px 8px rgba(46, 125, 50, 0.25);
+  animation: slideDown 0.4s ease-out;
+  line-height: 1.5;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Announcements Modal */
+.announcements-modal-content {
+  width: 90%;
+  max-width: 700px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  overflow: hidden;
+}
+
+.announcements-modal-content h3 {
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  color: white;
+  margin: 0;
+  padding: 18px;
+  font-size: 1.3rem;
+  border-radius: 5px 5px 0 0;
+}
+
+.close-announcements-modal {
+  position: absolute;
+  right: 15px;
+  top: 20px;
+  font-size: 24px;
+  cursor: pointer;
+  color: white;
+  line-height: 1;
+  z-index: 1;
+  transition: transform 0.2s;
+}
+
+.close-announcements-modal:hover {
+  transform: scale(1.2);
+}
+
+/* Announcements List Container */
+.announcements-list-container {
+  flex: 1;
+  overflow-y: auto;
+  padding: 18px;
+  border-bottom: 1px solid var(--border);
+}
+
+.announcements-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.loading-text {
+  text-align: center;
+  color: var(--text-secondary);
+  padding: 20px;
+  font-style: italic;
+}
+
+/* Announcement Card */
+.announcement-card {
+  background-color: var(--background);
+  border: 2px solid var(--border);
+  border-radius: 6px;
+  padding: 14px;
+  transition: all 0.3s ease;
+}
+
+.announcement-card:hover {
+  border-color: var(--primary-light);
+  box-shadow: 0 4px 12px rgba(83, 75, 174, 0.15);
+}
+
+.announcement-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.announcement-header h4 {
+  margin: 0;
+  color: var(--primary);
+  font-size: 1.05rem;
+  flex: 1;
+}
+
+.announcement-status {
+  font-size: 0.75rem;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.announcement-status.active {
+  background-color: var(--success-light);
+  color: var(--success);
+}
+
+.announcement-status.inactive {
+  background-color: var(--error-light);
+  color: var(--error);
+}
+
+.announcement-message {
+  margin: 10px 0;
+  color: var(--text-primary);
+  line-height: 1.5;
+}
+
+.announcement-dates {
+  display: flex;
+  gap: 12px;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin: 10px 0;
+  flex-wrap: wrap;
+}
+
+.announcement-dates span {
+  padding: 4px 8px;
+  background-color: white;
+  border-radius: 4px;
+  border-left: 3px solid var(--primary);
+}
+
+.announcement-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.edit-announcement-btn,
+.delete-announcement-btn {
+  flex: 1;
+  padding: 6px 12px;
+  font-size: 0.8rem;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.edit-announcement-btn {
+  background-color: var(--primary);
+  color: white;
+}
+
+.edit-announcement-btn:hover {
+  background-color: var(--primary-light);
+  transform: translateY(-1px);
+}
+
+.delete-announcement-btn {
+  background-color: var(--error);
+  color: white;
+}
+
+.delete-announcement-btn:hover {
+  background-color: #d32f2f;
+  transform: translateY(-1px);
+}
+
+/* Announcements Form Section */
+.announcements-form-section {
+  padding: 18px;
+  background-color: white;
+  border-radius: 0 0 5px 5px;
+}
+
+.announcements-form-section h4 {
+  color: var(--primary);
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+}
+
+#announcement-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#announcement-form .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+#announcement-form label {
+  color: var(--text-primary);
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+#announcement-form input,
+#announcement-form textarea {
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-family: Arial, sans-serif;
+  font-size: 0.9rem;
+  transition: border-color 0.2s;
+}
+
+#announcement-form input:focus,
+#announcement-form textarea:focus {
+  outline: none;
+  border-color: var(--primary-light);
+  box-shadow: 0 0 0 2px rgba(83, 75, 174, 0.1);
+}
+
+#announcement-form textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.form-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+#announcement-submit-btn {
+  flex: 2;
+  background: linear-gradient(145deg, var(--primary), var(--primary-light));
+  color: white;
+  padding: 10px 16px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+#announcement-submit-btn:hover {
+  box-shadow: 0 4px 12px rgba(26, 35, 126, 0.3);
+  transform: translateY(-2px);
+}
+
+#announcement-submit-btn:active {
+  transform: translateY(0);
+}
+
+.secondary-button {
+  flex: 1;
+  background-color: var(--border-focus);
+  color: var(--text-primary);
+  padding: 10px 16px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.secondary-button:hover {
+  background-color: var(--border);
+}
+
+/* Responsive adjustments for announcements modal */
+@media (max-width: 600px) {
+  .announcements-modal-content {
+    max-width: 95%;
+    max-height: 85vh;
+  }
+
+  .announcements-list-container {
+    max-height: 300px;
+  }
+
+  .announcement-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .announcement-status {
+    align-self: flex-start;
+  }
+
+  .form-buttons {
+    flex-direction: column;
+  }
+}
